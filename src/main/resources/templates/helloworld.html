@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="pragma" content="no-cache"/>
+    <meta http-equiv="Cache-Control" content="no-cache, must-revalidate"/>
+    <meta http-equiv="expires" content="0"/>
+    <script src="jquery-3.3.1.js"></script>
+    <title>this is just a helloworld page</title>
+</head>
+<body>
+<button name="helloworldbutton" id="helloworldbutton" onclick="test()">helloworld</button>
+</body>
+
+
+
+<footer style=" z-index: 2;position: relative;background-color: #3d3d3d;">
+    <script th:src="@{/scripts/helloworld.js?201801241700}"></script>
+</footer>
+
+</html>
