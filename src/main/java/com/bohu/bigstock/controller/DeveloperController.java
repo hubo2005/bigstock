@@ -34,9 +34,9 @@ public class DeveloperController {
         Calendar today = (Calendar) c1.clone();
         today.set(Calendar.MONTH,4);
         System.out.println("in hellworldJson method");
-        //StockService.getHistoricalQuoteByDay("600727",c1,today);
+        StockService.getHistoricalQuoteByDay("600727",c1,today);
 
-        StockService.getStockTradeDetailsByDay("600727",c1);
+        //StockService.getStockTradeDetailsByDay("600727",c1);
 
         return "{\"data\": data345}";
     }

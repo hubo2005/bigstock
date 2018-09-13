@@ -1,0 +1,15 @@
+requests:
+    - url: /downxls.php?date=2018-04-18&symbol=sh600727
+      responseCode: 200
+      ContentType: application/vnd.ms-excel
+      responseResource: stockTradeDetails/600727.csv
+
+    - url: /downxls.php?date=2018-03-18&symbol=sh600727
+      responseCode: 200
+      ContentType: text/html
+      responseResource: stockTradeDetails/600727_nodata.txt
+
+    - url: /service/chddata.html?code=0600727&start=20180318&end=20180518&fields=TCLOSE%3BHIGH%3BLOW%3BTOPEN%3BLCLOSE%3BCHG%3BPCHG%3BVOTURNOVER%3BVATURNOVER
+      responseCode: 200
+      ContentType: application/octet-stream
+      responseResource: stockDailyData/600727_318_518.csv

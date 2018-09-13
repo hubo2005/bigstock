@@ -27,6 +27,11 @@ public class Stock {
         this.symbol = symbol;
     }
 
+    public Stock (String symbol, String stockName) {
+        this.symbol = symbol;
+        this.name = stockName;
+    }
+
     /**
      * Checks if the returned name is null. This probably means that the symbol was not recognized by Yahoo Finance.
      * @return whether this stock's symbol is known by Yahoo Finance (true) or not (false)

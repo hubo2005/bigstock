@@ -9,7 +9,7 @@
 	<packaging>jar</packaging>
 
 	<name>bigstock</name>
-	<description>Demo project for Spring Boot</description>
+	<description>Stock data collecting</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -39,22 +39,14 @@
 			<artifactId>idworker</artifactId>
 			<version>1.1.5</version>
 		</dependency>
-
-        <dependency>
-            <groupId>org.apache.poi</groupId>
-            <artifactId>poi</artifactId>
-            <version>3.9</version>
-        </dependency>
-        <!--		<dependency>
-                    <groupId>com.yahoofinance-api</groupId>
-                    <artifactId>YahooFinanceAPI</artifactId>
-                    <version>3.13.0</version>
-                </dependency>-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
 		</dependency>
-
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-cassandra</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
@@ -63,6 +55,17 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.cassandraunit</groupId>
+			<artifactId>cassandra-unit-spring</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.squareup.okhttp3</groupId>
+			<artifactId>mockwebserver</artifactId>
+			<version>3.4.0</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>

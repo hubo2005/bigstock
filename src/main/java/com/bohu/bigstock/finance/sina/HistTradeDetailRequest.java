@@ -20,7 +20,7 @@ import java.util.*;
 public class HistTradeDetailRequest {
     private static final Logger log = LoggerFactory.getLogger(HistTradeDetailRequest.class);
 
-    public static final String SINA_QUOTES_BASE_URL = "http://market.finance.sina.com.cn/downxls.php";
+    public static final String SINA_QUOTES_BASE_URL = System.getProperty("sina.baseurl.quotes", "http://market.finance.sina.com.cn/downxls.php");
     //?date=[日期]&symbol=[市场][股票代码]
     public static final String QUOTES_CSV_DELIMITER = "\t";
     public static final int CONNECTION_TIMEOUT = 20000;
@@ -56,10 +56,10 @@ public class HistTradeDetailRequest {
             String disposition = connection.getHeaderField("Content-Disposition");
             int contentLength = connection.getContentLength();
 
-            if (!contentType.equalsIgnoreCase("application/vnd.ms-excel")) {
-                log.warn("查询结果不是excel格式,查询股票代码:"+symbol+" 查询日期："+ Utils.calendarToDateString(tradeDate,"yyyy-MM-dd"));
+          if (!contentType.equalsIgnoreCase("application/vnd.ms-excel")) {
+               log.warn("查询结果不是excel格式,查询股票代码:"+symbol+" 查询日期："+ Utils.calendarToDateString(tradeDate,"yyyy-MM-dd"));
                 return result;
-            }
+           }
 
         }
         InputStreamReader is = new InputStreamReader(connection.getInputStream());
@@ -71,7 +71,6 @@ public class HistTradeDetailRequest {
             HistoricalTradeDetail tradeDetail = this.parseXLSLine(symbol,tradeDate,line);
             if(tradeDetail!=null)   result.add(tradeDetail);
         }
-        log.info("come to the right place");
         return result;
     }
 

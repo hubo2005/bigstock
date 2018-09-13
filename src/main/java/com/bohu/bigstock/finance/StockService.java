@@ -1,7 +1,9 @@
 package com.bohu.bigstock.finance;
 
+import com.bohu.bigstock.finance.JQK.JQKStockCollection;
 import com.bohu.bigstock.finance.domain.HistoricalQuote;
 import com.bohu.bigstock.finance.domain.HistoricalTradeDetail;
+import com.bohu.bigstock.finance.domain.Stock;
 import com.bohu.bigstock.finance.netease.HistQuotesRequest;
 import com.bohu.bigstock.finance.sina.HistTradeDetailRequest;
 import org.springframework.stereotype.Component;
@@ -49,6 +51,10 @@ public class StockService {
         }
         return null;
 
+    }
+
+    public static List<Stock> loadStockNameAndSymbolFromResource(String filePath) {
+        return new JQKStockCollection().loadStockSymbolAndNameFromResourceFile(filePath);
     }
 
 

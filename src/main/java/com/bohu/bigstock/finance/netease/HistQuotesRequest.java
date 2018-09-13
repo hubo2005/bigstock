@@ -24,7 +24,7 @@ public class HistQuotesRequest {
 
     private static final Logger log = LoggerFactory.getLogger(HistQuotesRequest.class);
 
-    public static final String NETEASE_QUOTES_BASE_URL = "http://quotes.money.163.com/service/chddata.html";
+    public static final String NETEASE_QUOTES_BASE_URL = System.getProperty("netease.baseurl.quotes", "http://quotes.money.163.com/service/chddata.html");
     public static final String QUOTES_CSV_DELIMITER = ",";
     public static final int CONNECTION_TIMEOUT = 20000;
     private final String symbol;
